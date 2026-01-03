@@ -8,9 +8,9 @@ function NotFount() {
       <p className="text-muted mb-4">
         The page you're looking for does not exist or has been moved.
       </p>
-      <a href="/" className="btn btn-primary px-4 py-2">
+      <Link to="/" className="btn btn-primary px-4 py-2">
         Back to Home
-      </a>
+      </Link>
     </div>
   )
 }

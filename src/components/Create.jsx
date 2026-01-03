@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { createUser } from '../features/userDetailSlice';
+import { useNavigate } from 'react-router-dom';
 
 function Create() {
     
     const [users,setUsers]=useState({})
     const dispatch=useDispatch()
+    const navigate=useNavigate()
     const getUserData=(e)=>{
         setUsers({...users,[e.target.name]:e.target.value});
        
@@ -15,6 +17,7 @@ function Create() {
         e.preventDefault();
          console.log(users);
         dispatch(createUser(users))
+        navigate('/read')
     }
   return (
     <div>
@@ -51,7 +54,7 @@ function Create() {
     Female
   </label>
 </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-primary mt-4">Submit</button>
 </form>
     </div>
   )
